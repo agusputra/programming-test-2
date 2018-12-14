@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Products Grid</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <title>Products Grid</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div class="container">
         <header>
             <h1>Products Grid</h1>
 
-            <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse our selection of ascii faces in an exciting range of sizes and prices.</p>
+            <p>Here you're sure to find a bargain on some of the finest ascii available to purchase. Be sure to peruse
+                our selection of ascii faces in an exciting range of sizes and prices.</p>
 
-            <p>But first, a word from our sponsors:</p> <script>document.write('<img class="ad" src="/ads/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
+            <p>But first, a word from our sponsors:</p>
+            <script>
+                document.write('<img class="ad" src="http://localhost:3000/ads/?r=' + Math.floor(Math.random() * 1000) +
+                    '"/>');
+            </script>
         </header>
 
         <section class="products">
             ... products go here ...
         </section>
-    </body>
+    </div>
+</body>
+
 </html>
