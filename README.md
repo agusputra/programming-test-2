@@ -5,6 +5,8 @@ How To Run
 3. Run `npm run client-start` to build client and start static web server
 4. Open web browser http://localhost:5000
 
+Run `npm run client-test a` to run client test
+
 Products Grid
 ====
 
