@@ -1,3 +1,10 @@
+How To Run
+====
+1. Run `npm install`
+2. Run `npm run start` to start API server
+3. Run `npm run client-start` to build client and start static web server
+4. Open web browser http://localhost:5000
+
 Products Grid
 ====
 
