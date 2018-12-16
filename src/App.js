@@ -110,7 +110,7 @@ export default class App extends React.Component {
           </div>
           {
             !!this.state.products.length &&
-            <p>Loaded {this.state.products.length} products</p>
+            <p>Loaded {this.state.products.length} items</p>
           }
           {
             loading &&
