@@ -134,7 +134,7 @@ function insertAds(products) {
   let step = 20
 
   for (let j = step; j <= max; j += step) {
-    const id = generateUniqRandom()
+    const id = generateUniqRandom().toString().substr(2)
     products.splice(j + i++, 0, { id, type: 'ads', url: `http://localhost:3000/ads/?r=${id}` });
   }
 

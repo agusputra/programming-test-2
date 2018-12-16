@@ -11,6 +11,9 @@ function Ads({ product }) {
         <div className="card-body">
           <div className="card-text">
             <strong className="card-title">Ads</strong>
+            <p>
+              <small className="ID">ID: {product.id}</small>
+            </p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, minima.</p>
           </div>
         </div>
