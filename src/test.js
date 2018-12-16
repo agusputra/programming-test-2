@@ -1,10 +1,9 @@
 import U from './Utils'
 
-it('test using UTC timezone', () => {
-  expect(process.env.TZ).toEqual('UTC')
-})
-
 it('parse date and tz correctly', () => {
+  // Ensure we use UTC to do the test
+  expect(process.env.TZ).toEqual('UTC')
+
   let parsed = U.parseDateAndTz('Wed Jan 10 2018 01:00:00 GMT+0000')
   expect(parsed.getHours()).toEqual(1)
 
