@@ -23,7 +23,7 @@ export default class App extends React.Component {
     // Creates a throttled function that only invokes func at most once per every wait milliseconds.
     document.addEventListener('scroll', _.throttle(e => {
 
-      // If scroll is 480px above bottom then load.
+      // If scroll is 1200px from bottom then load.
       if (window.innerHeight + window.scrollY >= (document.body.scrollHeight - 1200)) {
         !this.state.loading && this.load(this.state.page)
       }
