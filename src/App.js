@@ -24,7 +24,7 @@ export default class App extends React.Component {
     document.addEventListener('scroll', _.throttle(e => {
 
       // If scroll is 480px above bottom then load.
-      if (window.innerHeight + window.scrollY >= (document.body.scrollHeight - 480)) {
+      if (window.innerHeight + window.scrollY >= (document.body.scrollHeight - 1200)) {
         !this.state.loading && this.load(this.state.page)
       }
     }, 200))
