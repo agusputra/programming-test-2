@@ -7,6 +7,10 @@ How To Run
 
 Run `npm run client-test a` to run client test
 
+Screenshot
+====
+[![screenshot](http://img.youtube.com/vi/5tgNX6d3ipE/0.jpg)](http://www.youtube.com/watch?v=5tgNX6d3ipE "ASCII Faces Store")
+
 Products Grid
 ====
 
