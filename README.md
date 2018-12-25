@@ -1,3 +1,8 @@
+# What is this repo?
+This repo is the solution of programming test/challenge that I've done.
+
+[Read more about the challenge](#products-grid)
+
 How To Run
 ====
 1. Run `npm install`
