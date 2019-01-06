@@ -5,12 +5,12 @@ This repo is the solution of programming test that I've done.
 
 How To Run
 ====
-1. Run `npm install`
-2. Run `npm run start` to start API server
-3. Run `npm run client-start` to build client and start static web server
+1. Run `yarn install`
+2. Run `yarn run start` to start API server
+3. Run `yarn run client-start` to build client and start static web server
 4. Open web browser http://localhost:5000
 
-Run `npm run client-test a` to run client test
+Run `yarn run client-test a` to run client test
 
 Screenshot
 ====
@@ -56,7 +56,7 @@ FAQ
 
 ### How do I start the app?
 
-Start with `npm start`. The server will look for any files you add to the `public/` directory.
+Start with `yarn start`. The server will look for any files you add to the `public/` directory.
 
 ### What libraries/frameworks, packages, tools can I use?
 
