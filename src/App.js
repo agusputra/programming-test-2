@@ -1,21 +1,16 @@
 import React from 'react'
 import _ from 'lodash'
-import axios from 'axios'
 import Product from './Product'
 
 export default class App extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      limit: 100,
-      products: [],
-      cache: [],
-      sort: null,
-      page: 0,
-      loading: false,
-      end: false,
-    }
+  state = {
+    limit: 100,
+    products: [],
+    cache: [],
+    sort: null,
+    page: 0,
+    loading: false,
+    end: false,
   }
 
   componentDidMount() {
@@ -32,18 +27,18 @@ export default class App extends React.Component {
     this.load(1)
   }
 
-  load(page, sort) {
+  async load(page, sort) {
     if (this.state.loading || (this.state.end && !sort)) {
       return
     }
 
     if (page === 1 || sort) {
-      this.loadFromServer(page, sort, products => {
-        this.setState({ products: products, cache: [] })
+      debugger
+      const products = await this.loadFromServer(page, sort)
+      this.setState({ products: insertAds(products), cache: [] })
 
-        //Pre-emptively fetch the next results.
-        this.populateCache(page)
-      })
+      //Pre-emptively fetch the next results.
+      this.populateCache(page)
     }
     else if (this.state.cache.length) {
       this.setState({ products: this.state.products.concat(this.state.cache), cache: [] })
@@ -53,11 +48,12 @@ export default class App extends React.Component {
     }
   }
 
-  populateCache(page) {
-    this.loadFromServer(page + 1, null, products => this.setState({ cache: products }))
+  async populateCache(page) {
+    const products = await this.loadFromServer(page + 1, null)
+    this.setState({ cache: insertAds(products) })
   }
 
-  loadFromServer(page, sort, cb) {
+  async loadFromServer(page, sort) {
     let query = `_limit=${this.state.limit}&_page=${page}`
 
     if (sort) {
@@ -77,15 +73,11 @@ export default class App extends React.Component {
     }
 
     this.setState(state)
-
     const l = document.location
-    console.log('LOAD: ', `${l.protocol}//${l.hostname}:3000/products?${query}`)
-    axios.get(`${l.protocol}//${l.hostname}:3000/products?${query}`)
-      .then(res => {
-        this.setState({ loading: false, end: res.data.length === 0 })
+    const products = await fetch(`${l.protocol}//${l.hostname}:3000/products?${query}`).then(res => res.json())
+    this.setState({ loading: false, end: products.length === 0 })
 
-        return cb && cb(insertAds(res.data))
-      })
+    return products
   }
 
   render() {
